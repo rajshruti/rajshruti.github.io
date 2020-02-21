@@ -1,81 +1,54 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Weather Analysis</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">
-            <a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Lattitude</a></span>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle"
-						  type="button" id="dropdownMenu1" data-toggle="dropdown"
-						  aria-haspopup="true" aria-expanded="false">
-					Plots
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					<a class="dropdown-item" href="maxtemp.html">Max Temperature</a>
-					<a class="dropdown-item" href="humidity.html">Humidity</a>
-					<a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
-					<a class="dropdown-item" href="windspeed.html">Wind Speed</a>
-				  </div>
-				</div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="comparisons.html">Comparison</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="data.html">Data</a>
-            </li>
-        </ul>
-		
-    </nav>
-	
-	<div class="container">
-	  <div class="row">
-		<div class="col-sm">
-		  <br>
-		  <h1>Summary: Latitude vs. X</h1>	
-		  <img src='Resources\assets\images\Fig1.png' alt="Summary Image"> 
-		  <br>
-		  <br>
-		  <p>The purpose of this project was to analyze how weather changes as you get closer to the equator.
-			 To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset
-			 on over 500 cities.
-		  </p>
-		  <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude.
-			 Factors we looked at included: temperature, cloudiness, wind speed, and humidity. The site provides
-			 the source data and visualizations created as part of the analysis, as well as explanations and descriptions
-			 of any trends and correlations witnessed.
-		  </p>
-		</div>
-		<div class="col-sm">
-		  <br>	
-		  <h1>Visualizations</h1>
-			<div class="row">
-				<div class="col-sm"><a href="maxtemp.html"><img class="img-thumbnail" src="Resources\assets\images\Fig1.png" alt="Thumbnail image"></a></div>
-				<div class="col-sm"><a href="humidity.html"><img class="img-thumbnail" src="Resources\assets\images\Fig2.png" alt="Thumbnail image"></a></div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-sm"><a href="cloudiness.html"><img class="img-thumbnail" src="Resources\assets\images\Fig3.png" alt="Thumbnail image"></a></div>
-				<div class="col-sm"><a href="windspeed.html"><img class="img-thumbnail" src="Resources\assets\images\Fig4.png" alt="Thumbnail image"></a></div>
-			</div>
-		</div>
-	  </div>
-	</div>
-	
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/app.js"></script>
+
 </body>
 
 </html>
