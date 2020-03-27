@@ -1,0 +1,67 @@
+
+AdmissionsFlash
+-
+Rep_Name" varchar,
+Leads INT,
+Appts INT,
+Shows INT,
+Enrols INT,
+Starts INT,
+App_Set DECIMAL,
+Show_Rate DECIMAL,
+Show_To_Enrollment DECIMAL,
+Enrollment_to_Start_Rate DECIMAL,
+Lead_to_Start DECIMAL,
+Month varchar,
+Unique_Rep varchar PK
+
+AdmissionsMasters
+-
+ContractCode varchar, PK
+Enrolment_Date DATE,
+RepName varchar,
+StartDate DATE,
+Program varchar,
+Funding_Source_Name varchar
+
+Attendance
+-
+ContractCode varchar, PK
+Date DATE,
+attendanceid INT,
+TotalTime INT,
+contractstartdate DATE,
+scheduledenddate DATE,	
+FundingSourceName varchar,
+Month varchar
+	
+	
+AccountsPayable
+-
+Particulars  varchar, PK
+Current INT,
+1-30 INT,
+31-60 INT,
+61-90 INT,
+>90 INT,
+TOTAL INT
+	
+AccountsReceivableDOM
+-
+ContractCode varchar, PK
+Program varchar,
+Current varchar,
+0-30 INT,
+31-60 INT,
+60-90 INT,
+90ormore, INT
+
+AccountsReceivableINT
+-
+ContractCode" varchar, PK
+Program" varchar,
+Current" varchar,
+0-30 INT,
+31-60 INT,
+60-90 INT,
+90ormore INT
